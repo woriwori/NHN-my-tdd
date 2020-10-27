@@ -4,10 +4,10 @@ export default class Money {
     this.currency = currency;
   }
   static dollar(amount) {
-    return new Dollar(amount, 'USD');
+    return new Money(amount, 'USD');
   }
   static franc(amount) {
-    return new Franc(amount, 'CHF');
+    return new Money(amount, 'CHF');
   }
   equals(compare) {
     const moneyInstance = compare;
@@ -15,16 +15,5 @@ export default class Money {
   }
   times(multiplier) {
     return new Money(this.amount * multiplier, this.currency);
-  }
-}
-class Franc extends Money {
-  constructor(amount, currency) {
-    super(amount, currency);
-  }
-}
-
-class Dollar extends Money {
-  constructor(amount, currency) {
-    super(amount, currency);
   }
 }
