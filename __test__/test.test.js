@@ -20,3 +20,8 @@ test('test equality', () => {
 
   expect(Money.franc(5).equals(Money.dollar(6))).toBeFalsy();
 });
+
+test('test currency', () => {
+  expect(Money.dollar(1).currency).toBe('USD');
+  expect(Money.franc(1).currency).toBe('CHF');
+});
