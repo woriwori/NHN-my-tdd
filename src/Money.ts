@@ -1,4 +1,9 @@
-export default class Money {
+interface Expression{
+
+}
+export default class Money implements Expression{
+  amount: number;
+  currency: string;
   constructor(amount, currency) {
     this.amount = amount;
     this.currency = currency;
@@ -15,5 +20,8 @@ export default class Money {
   }
   times(multiplier) {
     return new Money(this.amount * multiplier, this.currency);
+  }
+  plus(added) {
+    return new Money(this.amount + added.amount, this.currency);
   }
 }
