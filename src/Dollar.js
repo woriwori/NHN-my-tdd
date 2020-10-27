@@ -5,4 +5,7 @@ export default class Dollar {
   times(multiplier) {
     return new Dollar(this.amount * multiplier);
   }
+  equals(compare) {
+    return this.amount === compare.amount;
+  }
 }
