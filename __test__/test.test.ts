@@ -47,3 +47,8 @@ test('reduce Money by Bank', () => {
   const result: Money = bank.reduce(Money.dollar(1), 'USD');
   expect(Money.dollar(1)).toEqual(result);
 });
+
+test('rate for same currency', () => {
+  expect(1).toBe(new Bank().rate('USD', 'USD'));
+});
+
