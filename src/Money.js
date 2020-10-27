@@ -11,23 +11,20 @@ export default class Money {
   }
   equals(compare) {
     const moneyInstance = compare;
-    return this.amount === moneyInstance.amount && this.constructor === moneyInstance.constructor;
+    return this.amount === moneyInstance.amount && this.currency === moneyInstance.currency;
+  }
+  times(multiplier) {
+    return new Money(this.amount * multiplier, this.currency);
   }
 }
 class Franc extends Money {
   constructor(amount, currency) {
     super(amount, currency);
   }
-  times(multiplier) {
-    return Money.franc(this.amount * multiplier);
-  }
 }
 
 class Dollar extends Money {
   constructor(amount, currency) {
     super(amount, currency);
-  }
-  times(multiplier) {
-    return Money.dollar(this.amount * multiplier);
   }
 }
