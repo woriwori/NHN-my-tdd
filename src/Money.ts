@@ -1,9 +1,7 @@
-interface Expression{
-
-}
-export default class Money implements Expression{
-  amount: number;
-  currency: string;
+import Expression from './Expression';
+export default class Money implements Expression {
+  private amount: number;
+  public currency: string;
   constructor(amount, currency) {
     this.amount = amount;
     this.currency = currency;
