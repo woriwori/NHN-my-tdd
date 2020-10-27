@@ -39,16 +39,16 @@ test('reduce Sum by Bank', () => {
   const bank: Bank = new Bank();
   const result: Money = bank.reduce(sum, 'USD');
 
-  expect(Money.dollar(7)).toEqual(result);
+  expect(result).toEqual(Money.dollar(7));
 });
 
 test('reduce Money by Bank', () => {
   const bank: Bank = new Bank();
   const result: Money = bank.reduce(Money.dollar(1), 'USD');
-  expect(Money.dollar(1)).toEqual(result);
+  expect(result).toEqual(Money.dollar(1));
 });
 
 test('rate for same currency', () => {
-  expect(1).toBe(new Bank().rate('USD', 'USD'));
+  expect(new Bank().rate('USD', 'USD')).toBe(1);
 });
 
