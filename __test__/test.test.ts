@@ -52,3 +52,12 @@ test('rate for same currency', () => {
   expect(new Bank().rate('USD', 'USD')).toBe(1);
 });
 
+test('mix addition', () => {
+  const fiveBucks: Expression = Money.dollar(5);
+  const tenBucks: Expression = Money.franc(10);
+  const bank: Bank = new Bank();
+  bank.addRate('CHF', 'USD', 2);
+  const result: Money = bank.reduce(fiveBucks.plus(tenBucks), 'USD');
+
+  expect(result).toEqual(Money.dollar(10));
+});
