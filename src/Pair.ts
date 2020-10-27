@@ -7,11 +7,11 @@ export default class Pair {
     this.to = to;
     this.key = from + to;
   }
-  equals(object: object) {
+  equals(object: object): boolean {
     const pair: Pair = object as Pair;
     return this.from === pair.from && this.to === pair.to;
   }
-  hashCode() {
+  hashCode(): number {
     return 0;
   }
 }

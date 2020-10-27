@@ -5,14 +5,14 @@ import Pair from './Pair';
 export default class Bank {
   private rates: Map<string, number> = new Map();
 
-  reduce(source: Expression, to: string) {
+  reduce(source: Expression, to: string): Expression {
     return source.reduce(this, to);
   }
-  rate(from: string, to: string) {
+  rate(from: string, to: string): number {
     if (from === to) return 1;
     return this.rates.get(new Pair(from, to).key);
   }
-  addRate(from: string, to: string, rate: number) {
+  addRate(from: string, to: string, rate: number): void {
     this.rates.set(new Pair(from, to).key, rate);
   }
 }
