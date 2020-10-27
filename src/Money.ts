@@ -1,6 +1,6 @@
 import Expression from './Expression';
 export default class Money implements Expression {
-  private amount: number;
+  public amount: number;
   public currency: string;
   constructor(amount, currency) {
     this.amount = amount;
@@ -21,5 +21,8 @@ export default class Money implements Expression {
   }
   plus(added) {
     return new Money(this.amount + added.amount, this.currency);
+  }
+  reduce(to) {
+    return this;
   }
 }
